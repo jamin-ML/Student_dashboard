@@ -1,0 +1,45 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Exam Registration</h4>
+                </div>
+                <div class="card-body">
+                    {% if not_allowed %}
+                        <div class="alert alert-danger">
+                            You must clear your fee balance to register for exams.
+                        </div>
+                    {% else %}
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="exam" class="form-label">Exams</label>
+                                <select class="form-select" id="exam" name="exam" required>
+                                    <option value="">-- Select Exam --</option>
+                                    <option value="end_term">End Term</option>
+                                    <option value="supplementary">Supplementary</option>
+                                    <option value="special_exam">Special Exam</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

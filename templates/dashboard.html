@@ -1,0 +1,349 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+            body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .top-header {
+      background-color: #3ead63;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      height: 100px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .logo img{
+      width: 100px;
+      height: 50px;
+    }
+
+    .blut {
+      width: 180px;
+      height: 100px;
+    }
+
+    .announcement {
+      background-color: #e74c3c;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 4px;
+      width: 50%;
+      text-align: center;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .avatar {
+      width: 70px;
+      height: 30px;
+    }
+
+    .page-wrapper {
+      display: flex;
+      width: 100%;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #00C0EF;
+      color: white;
+      padding: 20px;
+      transition: all 0.3s ease;
+      position: sticky;
+      top: 100px;
+      height: calc(100vh - 100px);
+    }
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li {
+      margin-bottom: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      display: block;
+    }
+
+    .nav-links a:hover {
+      text-decoration: none;
+      transform: scale(1.02);
+      transition: all .46s ease-out;
+      color: blue;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .toggle-btn {
+      display: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background-color: #00C0EF;
+      color: white;
+      border: none;
+      padding: 10px;
+      z-index: 1001;
+      border-radius: 5px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        top: 100px;
+        left: -250px;
+        z-index: 999;
+      }
+
+      .sidebar.active {
+        left: 0;
+      }
+
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .toggle-btn {
+        display: block;
+      }
+    }
+
+    .card {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .user-info form {
+      display: inline;
+    }
+
+    .user-info button {
+      padding: 3px 10px;
+    }
+
+    .nav-links i {
+      font-size: 18px;
+      vertical-align: middle;
+    }
+
+    .toggle-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-icon.rotate-down {
+      transform: rotate(-90deg);
+    }
+    span i{
+        color: #6C757D;
+
+    }
+    a span{
+        color: greenyellow;
+        font-size: 19px;
+        font-weight: 600;
+       
+
+    }
+    </style>
+</head>
+<body>
+
+<header class="top-header">
+    <div class="logo">
+        <img src="{% static 'css/banner11.png' %}" alt="User" class="blut">
+    </div>
+
+    <div class="announcement">
+        <marquee behavior="scroll" direction="left">Welcome to the new student portal. For assistance, contact ICT support.</marquee>
+    </div>
+
+    <div class="user-info">
+        <img src="{% static 'css/banner11.png' %}" alt="User" class="avatar">
+        <span>Welcome: {{ student.full_name }}</span>
+    </div>
+
+</header>
+
+<button class="toggle-btn" id="sidebarToggle">☰</button>
+
+<div class="page-wrapper">
+    <div class="sidebar" id="sidebar">
+        <ul class="nav-links">
+            <li>
+                <a href="#"><i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+            </li>
+            <li>
+            <a class="d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#financeSubmenu" role="button" aria-expanded="false" aria-controls="academicsSubmenu">
+                <span><i class="bi bi-cash-coin me-2"></i>Finance</span>
+                <i class="bi bi-chevron-double-left toggle-icon"></i>
+            </a>
+            <ul class="collapse ps-4 mt-2" id="financeSubmenu">
+                <li><a href="#">Fee stracture</a></li>
+                <li><a href="#">Fee stetment.</a></li>
+                
+            </ul>
+            </li>
+            
+            <li>
+            <a class="d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#academicsSubmenu" role="button" aria-expanded="false" aria-controls="academicsSubmenu">
+                <span><i class="bi bi-book-half me-2"></i> Academics</span>
+                <i class="bi bi-chevron-double-left toggle-icon"></i>
+            </a>
+            <ul class="collapse ps-4 mt-2" id="academicsSubmenu">
+                <li><a href="{% url 'register_exams' %}">Exam Registration</a></li>
+                <li><a href="#">Exam Card</a></li>
+                <li><a href="#">Report Printing</a></li>
+                <li><a href="#">Teachers Evaluation</a></li>
+            </ul>
+            </li>
+            <li>
+            <a class="d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#clearenceSubmenu" role="button" aria-expanded="false" aria-controls="academicsSubmenu">
+                <span><i class="bi bi-check2-square me-2"></i>Student clearence</span>
+                <i class="bi bi-chevron-double-left toggle-icon"></i>
+            </a>
+            <ul class="collapse ps-4 mt-2" id="clearenceSubmenu">
+                <li><a href="#">Clearence request</a></li>
+            </ul>
+            </li>
+            
+            <li>
+                <a href="#settingsSubmenu" class="d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-parent=".nav-links" role="button" aria-expanded="false" aria-controls="settingsSubmenu">
+                    <span><i class="bi bi-gear me-2"></i>Settings</span>
+                    <i class="bi bi-chevron-double-left toggle-icon"></i>
+                </a>
+                <ul class="collapse ps-4 mt-2" id="settingsSubmenu">
+                    <li><a href="#">Change Password</a></li>
+                    <li><a href="#">Update Profile</a></li>
+                    <li>
+                        <form method="POST" action="{% url 'logout_user' %}" style="margin: 0;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-sm btn-light">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <h2 class="text-capitalize">Welcome, {{ student.full_name }}</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-white bg-warning mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Billed</h5>
+                            <p class="card-text">Ksh. 306000.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-success mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Paid</h5>
+                            <p class="card-text">Ksh. 160150.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-white bg-info mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Balance</h5>
+                            <p class="card-text">Ksh. 145850.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% if student %}
+            <div class="card mb-3">
+                <div class="card-header">User Profile</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <img src="{{ student.photo.url }}" class="img-thumbnail" alt="Student Photo">
+                            <p class="mt-2">Admission No: {{ student.admission_number }}</p>
+                        </div>
+                        <div class="col-md-8">
+                            <table class="table text-capitalize">
+                                <tr><th>Course:</th><td>{{ student.course }}</td></tr>
+                                <tr><th>Full Name:</th><td>{{ student.full_name }}</td></tr>
+                                <tr><th>Date of Birth:</th><td>{{ student.date_of_birth }}</td></tr>
+                                <tr><th>ID/Passport:</th><td>{{ student.id_number }}</td></tr>
+                                <tr><th>Phone:</th><td>{{ student.parent_contact }}</td></tr>
+                            </table>
+                            <button class="btn btn-danger">Make Payment</button>
+                            <button class="btn btn-secondary">Update Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<script src="{% static 'css/bootstrap.bundle.min.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleBtn = document.getElementById('sidebarToggle');
+  const sidebar = document.getElementById('sidebar');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+
+  // Listen for collapse show/hide events and rotate icons
+  const collapseElements = document.querySelectorAll('.collapse');
+
+  collapseElements.forEach(collapseEl => {
+    collapseEl.addEventListener('show.bs.collapse', function () {
+      const icon = document.querySelector(`[href="#${collapseEl.id}"] .toggle-icon`);
+      if (icon) icon.classList.add('rotate-down');
+    });
+
+    collapseEl.addEventListener('hide.bs.collapse', function () {
+      const icon = document.querySelector(`[href="#${collapseEl.id}"] .toggle-icon`);
+      if (icon) icon.classList.remove('rotate-down');
+    });
+  });
+});
+</script>
+</body>
+</html>
