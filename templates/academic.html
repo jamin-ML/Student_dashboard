@@ -1,0 +1,482 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics | Bright Future Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/academic.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="School Logo">
+                <div class="logo-text">
+                    <h1>BRIGHT <span>FUTURE</span></h1>
+                    <p>Academy</p>
+                </div>
+            </div>
+    
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+    
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'academic' %}">Academics</a></li>
+                    <li><a href="{% url 'admission' %}">Admissions</a></li>
+                    <li><a href="{% url 'contact'%}">Contact</a></li>
+                    <li><a href="{% url 'dashboard'%}">Students Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="academics-hero">
+        <div class="container hero-content scroll-appear">
+            <h1>Academic Excellence</h1>
+            <p>Discover our rigorous curriculum, innovative programs, and dedicated faculty committed to student
+                success.</p>
+            <a href="#programs" class="btn btn-outline">Explore Programs</a>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Our Academic Programs</h2>
+                <p>Comprehensive learning pathways tailored to student interests and aspirations</p>
+            </div>
+
+            <div class="programs-tabs scroll-appear delay-1">
+                <button class="tab-btn active" data-tab="lower-school">Lower School</button>
+                <button class="tab-btn" data-tab="middle-school">Middle School</button>
+                <button class="tab-btn" data-tab="high-school">High School</button>
+                <button class="tab-btn" data-tab="special-programs">Special Programs</button>
+            </div>
+
+            <div class="tab-content active" id="lower-school">
+                <div class="program-grid">
+                    <div class="program-card scroll-appear delay-1">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                                alt="Elementary Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>Elementary School (K-5)</h3>
+                            <p>Our foundational program focuses on literacy, numeracy, and social development through
+                                hands-on learning experiences.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="program-card scroll-appear delay-2">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="STEM Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>Early STEM</h3>
+                            <p>Introduction to science, technology, engineering and math through age-appropriate
+                                exploration and discovery.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="program-card scroll-appear delay-3">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="Arts Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>Creative Arts</h3>
+                            <p>Develop creativity through visual arts, music, theater, and movement integrated across
+                                the curriculum.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="middle-school">
+                <div class="program-grid">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                                alt="Middle School Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>Core Curriculum</h3>
+                            <p>Challenging academic program with departmentalized instruction across all subject areas.
+                            </p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="STEM Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>STEM Academy</h3>
+                            <p>Advanced coursework in science, technology, engineering and mathematics with
+                                project-based learning.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1542623026-a961a74d111b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="Athletics Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>Athletics</h3>
+                            <p>Competitive sports program with 10 team options focusing on skill development and
+                                teamwork.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="high-school">
+                <div class="program-grid">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="College Prep Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>College Preparatory</h3>
+                            <p>Rigorous academic program with 25+ AP and honors courses to prepare for top universities.
+                            </p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="IB Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>International Baccalaureate</h3>
+                            <p>World-renowned IB Diploma Program offering globally recognized curriculum and
+                                assessments.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="Arts Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>Visual & Performing Arts</h3>
+                            <p>Comprehensive arts program with concentrations in music, theater, visual arts, and
+                                digital media.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="special-programs">
+                <div class="program-grid">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="Gifted Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>Gifted & Talented</h3>
+                            <p>Specialized instruction for academically gifted students with accelerated and enriched
+                                curriculum.</p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                                alt="Learning Support Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>Learning Support</h3>
+                            <p>Personalized support services for students with learning differences or special needs.
+                            </p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                                alt="ESL Program">
+                        </div>
+                        <div class="program-info">
+                            <h3>English Language Learning</h3>
+                            <p>Specialized instruction for non-native English speakers to achieve academic proficiency.
+                            </p>
+                            <a href="#" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Curriculum Overview</h2>
+                <p>Explore our comprehensive academic curriculum by grade level</p>
+            </div>
+
+            <div class="grade-levels scroll-appear delay-1">
+                <button class="grade-btn active" data-grade="elementary">Elementary (K-5)</button>
+                <button class="grade-btn" data-grade="middle">Middle School (6-8)</button>
+                <button class="grade-btn" data-grade="high">High School (9-12)</button>
+            </div>
+
+            <div class="curriculum-content scroll-appear delay-2">
+                <h3 id="grade-level-title">Elementary School Curriculum</h3>
+                <p id="grade-level-desc">Our elementary program builds strong foundations in core academic areas while
+                    nurturing creativity and social-emotional development.</p>
+
+                <div class="subject-categories">
+                    <div class="subject-category">
+                        <h4>Core Subjects</h4>
+                        <ul class="subject-list">
+                            <li>English Language Arts</li>
+                            <li>Mathematics</li>
+                            <li>Science</li>
+                            <li>Social Studies</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-category">
+                        <h4>Special Areas</h4>
+                        <ul class="subject-list">
+                            <li>Art & Music</li>
+                            <li>Physical Education</li>
+                            <li>Technology</li>
+                            <li>Library Skills</li>
+                        </ul>
+                    </div>
+
+                    <div class="subject-category">
+                        <h4>Enrichment</h4>
+                        <ul class="subject-list">
+                            <li>Spanish Language</li>
+                            <li>STEM Lab</li>
+                            <li>Character Education</li>
+                            <li>Field Studies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Academic Highlights</h2>
+                <p>What sets our academic program apart</p>
+            </div>
+
+            <div class="highlights-grid">
+                <div class="highlight-card scroll-appear delay-1">
+                    <div class="highlight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>98% college acceptance rate with 85% of graduates attending their first-choice school.</p>
+                </div>
+
+                <div class="highlight-card scroll-appear delay-2">
+                    <div class="highlight-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Technology Integration</h3>
+                    <p>1:1 device program with cutting-edge technology integrated across all grade levels.</p>
+                </div>
+
+                <div class="highlight-card scroll-appear delay-3">
+                    <div class="highlight-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Perspective</h3>
+                    <p>International partnerships and globally-focused curriculum preparing students for an
+                        interconnected world.</p>
+                </div>
+
+                <div class="highlight-card scroll-appear delay-4">
+                    <div class="highlight-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Personalized Learning</h3>
+                    <p>Differentiated instruction and individualized learning plans tailored to each student's needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="faculty">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Meet Our Faculty</h2>
+                <p>Dedicated educators inspiring excellence</p>
+            </div>
+
+            <div class="faculty-grid">
+                <div class="faculty-card scroll-appear delay-1">
+                    <div class="faculty-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Faculty Member">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>Science Department Chair</p>
+                        <div class="faculty-bio">
+                            PhD in Molecular Biology, 15 years teaching experience, published researcher.
+                        </div>
+                        <a href="#" class="btn btn-outline"
+                            style="color: var(--secondary); border-color: var(--secondary);">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="faculty-card scroll-appear delay-2">
+                    <div class="faculty-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Faculty Member">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Michael Chen</h3>
+                        <p>Mathematics Instructor</p>
+                        <div class="faculty-bio">
+                            MS in Mathematics Education, specializes in project-based learning and STEM integration.
+                        </div>
+                        <a href="#" class="btn btn-outline"
+                            style="color: var(--secondary); border-color: var(--secondary);">View Profile</a>
+                    </div>
+                </div>
+
+                <div class="faculty-card scroll-appear delay-3">
+                    <div class="faculty-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="Faculty Member">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Emily Rodriguez</h3>
+                        <p>English Department</p>
+                        <div class="faculty-bio">
+                            MA in Literature, 10 years experience, leads award-winning creative writing program.
+                        </div>
+                        <a href="#" class="btn btn-outline"
+                            style="color: var(--secondary); border-color: var(--secondary);">View Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;" class="scroll-appear delay-4">
+                <a href="faculty.html" class="btn">View All Faculty</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container scroll-appear">
+            <h2>Experience Our Academics Firsthand</h2>
+            <p>Schedule a campus tour or shadow day to see our programs in action.</p>
+            <a href="contact.html" class="btn">Schedule a Visit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section style="background: var(--dark); color: white; padding: 60px 0 20px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;" class="scroll-appear">
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Request Academic Information</h3>
+                <p style="max-width: 600px; margin: 0 auto 30px;">Our admissions team can provide detailed curriculum
+                    guides and program specifics.</p>
+                <a href="contact.html" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col">
+                    <h3>Bright Future Academy</h3>
+                    <p>123 Education Way<br>Learning City, ST 12345</p>
+                    <p>Phone: (123) 456-7890<br>Email: info@brightfuture.edu</p>
+                </div>
+    
+                <!-- Column 2 -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Academics</a></li>
+                        <li><a href="#">Student Life</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Parent Portal</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3 -->
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Cafeteria Menu</a></li>
+                        <li><a href="#">School Policies</a></li>
+                        <li><a href="#">Employment</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 4 -->
+                <div class="footer-col">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2023 Bright Future Academy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/academic.js' %}"></script>
+</body>
+
+</html>

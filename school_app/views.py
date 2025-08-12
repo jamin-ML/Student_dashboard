@@ -133,3 +133,19 @@ def register_exams(request):
 @login_required
 def exam_success(request):
     return render(request, 'exam_success.html')
+
+def about_school(request):
+    return render(request, 'about.html')
+
+
+def academics(request):
+    return render(request, 'academic.html')
+
+def admission(request):
+    return render(request, 'admission.html')
+
+def contacts(request):
+    return render(request, 'contact.html')
+
+def news(request):
+    return render(request, 'news.html')

@@ -7,7 +7,8 @@ from django.conf.urls.static import static  # for serving media files in develop
 from django.contrib.auth import views as auth_views
 
 
-urlpatterns = [    path('',views.home,name='home'),
+urlpatterns = [ 
+    path('',views.home,name='home'),
     path('login/', views.login_user, name='login'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('register/', views.register_student, name='register_student'),
@@ -15,6 +16,11 @@ urlpatterns = [    path('',views.home,name='home'),
     path('logout/',views.logout_user, name='logout_user'),
     path('register-exams/', views.register_exams, name='register_exams'),
     path('exam-success/', views.exam_success, name='exam_success'),
+    path('about-school/', views.about_school, name='about'),
+    path('academics/', views.academics, name='academic'),
+    path('contact-us/', views.contacts, name='contact'),
+    path('admission/', views.admission, name='admission'),
+    path('news/', views.news, name='news'),
 
 ]
 if settings.DEBUG:

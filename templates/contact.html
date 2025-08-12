@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Bright Future Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/home.css' %}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="School Logo">
+                <div class="logo-text">
+                    <h1>BRIGHT <span>FUTURE</span></h1>
+                    <p>Academy</p>
+                </div>
+            </div>
+    
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+    
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'academic' %}">Academics</a></li>
+                    <li><a href="{% url 'admission' %}">Admissions</a></li>
+                    <li><a href="{% url 'contact'%}">Contact</a></li>
+                    <li><a href="{% url 'dashboard'%}">Students Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container hero-content scroll-appear">
+            <h1>We'd Love to Hear From You</h1>
+            <p>Reach out with questions, schedule a visit, or learn more about our programs.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Contact Information</h2>
+                <p>Multiple ways to get in touch with our school</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card scroll-appear delay-1">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>123 Education Avenue</p>
+                    <p>Learning City, LC 12345</p>
+                    <a href="#map" class="contact-link">View on map →</a>
+                </div>
+
+                <div class="contact-card scroll-appear delay-2">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Main Office: (123) 456-7890</p>
+                    <p>Admissions: (123) 456-7891</p>
+                    <a href="tel:+11234567890" class="contact-link">Call now →</a>
+                </div>
+
+                <div class="contact-card scroll-appear delay-3">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>General Inquiries: info@brightfuture.edu</p>
+                    <p>Admissions: admissions@brightfuture.edu</p>
+                    <a href="mailto:info@brightfuture.edu" class="contact-link">Send email →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-overlay scroll-appear">
+                <h3>Bright Future Academy</h3>
+                <p><i class="fas fa-map-marker-alt" style="color: var(--secondary);"></i> 123 Education Avenue, Learning
+                    City</p>
+                <p><i class="fas fa-clock" style="color: var(--secondary);"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+                <p><i class="fas fa-phone" style="color: var(--secondary);"></i> (123) 456-7890</p>
+                <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Get Directions</a>
+            </div>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="contact-form">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Send Us a Message</h2>
+                <p>Have questions? We're happy to help.</p>
+            </div>
+
+            <div class="form-container">
+                <div class="form-content scroll-appear delay-1">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name*</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject*</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select a subject</option>
+                                <option value="admissions">Admissions Inquiry</option>
+                                <option value="academics">Academic Programs</option>
+                                <option value="general">General Information</option>
+                                <option value="tour">Schedule a Tour</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message*</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-image scroll-appear delay-2">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80"
+                        alt="School Campus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Contact Specific Departments</h2>
+                <p>Connect directly with the team you need</p>
+            </div>
+
+            <div class="departments-grid">
+                <div class="department-card scroll-appear delay-1">
+                    <h3>Admissions</h3>
+                    <p>Questions about applying, tours, or requirements.</p>
+                    <p><strong>Email:</strong> admissions@brightfuture.edu</p>
+                    <p><strong>Phone:</strong> (123) 456-7891</p>
+                </div>
+
+                <div class="department-card scroll-appear delay-2">
+                    <h3>Academic Office</h3>
+                    <p>Curriculum, schedules, and academic policies.</p>
+                    <p><strong>Email:</strong> academics@brightfuture.edu</p>
+                    <p><strong>Phone:</strong> (123) 456-7892</p>
+                </div>
+
+                <div class="department-card scroll-appear delay-3">
+                    <h3>Student Services</h3>
+                    <p>Counseling, health services, and student life.</p>
+                    <p><strong>Email:</strong> studentservices@brightfuture.edu</p>
+                    <p><strong>Phone:</strong> (123) 456-7893</p>
+                </div>
+
+                <div class="department-card scroll-appear delay-4">
+                    <h3>Business Office</h3>
+                    <p>Tuition, billing, and financial aid questions.</p>
+                    <p><strong>Email:</strong> business@brightfuture.edu</p>
+                    <p><strong>Phone:</strong> (123) 456-7894</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section style="background: var(--dark); color: white; padding: 60px 0 20px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;" class="scroll-appear">
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Connect With Us</h3>
+                <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 30px;">
+                    <a href="#"
+                        style="color: white; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        style="color: white; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#"
+                        style="color: white; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        style="color: white; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#"
+                        style="color: white; background: rgba(255,255,255,0.1); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+                <p style="max-width: 600px; margin: 0 auto;">Subscribe to our newsletter for the latest school news and
+                    events.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col">
+                    <h3>Bright Future Academy</h3>
+                    <p>123 Education Way<br>Learning City, ST 12345</p>
+                    <p>Phone: (123) 456-7890<br>Email: info@brightfuture.edu</p>
+                </div>
+    
+                <!-- Column 2 -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Academics</a></li>
+                        <li><a href="#">Student Life</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Parent Portal</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3 -->
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Cafeteria Menu</a></li>
+                        <li><a href="#">School Policies</a></li>
+                        <li><a href="#">Employment</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 4 -->
+                <div class="footer-col">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2023 Bright Future Academy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/contact.js' %}"></script>
+</body>
+
+</html>

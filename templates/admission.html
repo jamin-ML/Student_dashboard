@@ -1,0 +1,393 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions | Bright Future Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/admission.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="School Logo">
+                <div class="logo-text">
+                    <h1>BRIGHT <span>FUTURE</span></h1>
+                    <p>Academy</p>
+                </div>
+            </div>
+    
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+    
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'academic' %}">Academics</a></li>
+                    <li><a href="{% url 'admission' %}">Admissions</a></li>
+                    <li><a href="{% url 'contact'%}">Contact</a></li>
+                    <li><a href="{% url 'dashboard'%}">Students Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="admissions-hero">
+        <div class="container hero-content scroll-appear">
+            <h1>Begin Your Journey With Us</h1>
+            <p>Discover how to join our vibrant learning community and start your path to success.</p>
+            <a href="#apply" class="btn btn-accent">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Admissions Process</h2>
+                <p>Our straightforward process makes joining our community simple and stress-free</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step scroll-appear delay-1">
+                    <div class="step-number">1</div>
+                    <h3>Inquiry</h3>
+                    <p>Submit our online inquiry form or attend an open house to learn more about our programs.</p>
+                </div>
+
+                <div class="process-step scroll-appear delay-2">
+                    <div class="step-number">2</div>
+                    <h3>Application</h3>
+                    <p>Complete our online application and submit required documents by the deadline.</p>
+                </div>
+
+                <div class="process-step scroll-appear delay-3">
+                    <div class="step-number">3</div>
+                    <h3>Assessment</h3>
+                    <p>Students complete grade-appropriate assessments to ensure proper placement.</p>
+                </div>
+
+                <div class="process-step scroll-appear delay-4">
+                    <div class="step-number">4</div>
+                    <h3>Decision</h3>
+                    <p>Receive your admissions decision within 2-3 weeks of completing all steps.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center;" class="scroll-appear">
+                <a href="#" class="btn">Download Admissions Checklist</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="requirements">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Admissions Requirements</h2>
+                <p>What you'll need to complete your application</p>
+            </div>
+
+            <div class="requirements-grid">
+                <div class="requirement-card scroll-appear delay-1">
+                    <h3><i class="fas fa-user-graduate"></i> General Requirements</h3>
+                    <ul class="requirement-list">
+                        <li>Completed application form</li>
+                        <li>Application fee ($75 non-refundable)</li>
+                        <li>Birth certificate copy</li>
+                        <li>Immunization records</li>
+                        <li>Recent physical examination</li>
+                    </ul>
+                </div>
+
+                <div class="requirement-card scroll-appear delay-2">
+                    <h3><i class="fas fa-file-alt"></i> Academic Records</h3>
+                    <ul class="requirement-list">
+                        <li>Official transcripts (grades K-12)</li>
+                        <li>Standardized test results (if available)</li>
+                        <li>Current year report card</li>
+                        <li>Teacher recommendations (forms provided)</li>
+                    </ul>
+                </div>
+
+                <div class="requirement-card scroll-appear delay-3">
+                    <h3><i class="fas fa-pencil-alt"></i> Additional Materials</h3>
+                    <ul class="requirement-list">
+                        <li>Student essay (grades 6-12)</li>
+                        <li>Parent statement</li>
+                        <li>Interview (scheduled after application)</li>
+                        <li>Entrance assessment (scheduled separately)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tuition Section -->
+    <section class="tuition">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Tuition & Financial Aid</h2>
+                <p>Investing in your child's future</p>
+            </div>
+
+            <div class="tuition-container">
+                <div class="tuition-info scroll-appear delay-1">
+                    <h3>Affordable Excellence</h3>
+                    <p>We believe quality education should be accessible. Our tuition rates are competitive and we offer
+                        several financial aid options to qualified families.</p>
+
+                    <table class="tuition-table">
+                        <thead>
+                            <tr>
+                                <th>Grade Level</th>
+                                <th>Annual Tuition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pre-K (Full Day)</td>
+                                <td>$12,500</td>
+                            </tr>
+                            <tr>
+                                <td>K-5th Grade</td>
+                                <td>$15,750</td>
+                            </tr>
+                            <tr>
+                                <td>6th-8th Grade</td>
+                                <td>$17,200</td>
+                            </tr>
+                            <tr>
+                                <td>9th-12th Grade</td>
+                                <td>$18,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>* Sibling discounts and payment plans available</p>
+                    <a href="#" class="btn">Financial Aid Information</a>
+                </div>
+
+                <div class="tuition-image scroll-appear delay-2">
+                    <img src="{% static 'img/admission.jpg' %}"
+                        alt="Students in classroom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="faqs">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item scroll-appear delay-1">
+                    <div class="faq-question">
+                        What is the application deadline?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We have rolling admissions but recommend applying by January 15th for the following academic
+                            year to ensure consideration for financial aid and to secure your spot. Late applications
+                            are accepted based on availability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-appear delay-2">
+                    <div class="faq-question">
+                        Do you offer scholarships?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer merit-based scholarships for middle and high school students, as well as
+                            need-based financial aid for qualifying families. Approximately 35% of our students receive
+                            some form of financial assistance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-appear delay-3">
+                    <div class="faq-question">
+                        Can we schedule a campus tour?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We encourage all prospective families to visit our campus. Tours are available
+                            Monday through Friday by appointment. We also host monthly open houses where you can meet
+                            teachers and current parents.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-appear delay-4">
+                    <div class="faq-question">
+                        What is your student-teacher ratio?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our average student-teacher ratio is 15:1, with most classes having between 12-18 students.
+                            This allows for personalized attention while still maintaining a vibrant classroom dynamic.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container scroll-appear">
+            <h2>Ready to Apply?</h2>
+            <p>Begin your application today and take the first step toward joining our exceptional learning community.
+            </p>
+            <a href="#apply" class="btn btn-accent">Start Application</a>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="apply" class="application">
+        <div class="container">
+            <div class="application-form scroll-appear">
+                <h2 style="text-align: center; margin-bottom: 30px;">Application Form</h2>
+                <form id="admissionsForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name*</label>
+                            <input type="text" id="firstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name*</label>
+                            <input type="text" id="lastName" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone*</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grade">Grade Applying For*</label>
+                        <select id="grade" class="form-control" required>
+                            <option value="">Select Grade</option>
+                            <option value="prek">Pre-Kindergarten</option>
+                            <option value="k">Kindergarten</option>
+                            <option value="1">1st Grade</option>
+                            <option value="2">2nd Grade</option>
+                            <option value="3">3rd Grade</option>
+                            <option value="4">4th Grade</option>
+                            <option value="5">5th Grade</option>
+                            <option value="6">6th Grade</option>
+                            <option value="7">7th Grade</option>
+                            <option value="8">8th Grade</option>
+                            <option value="9">9th Grade</option>
+                            <option value="10">10th Grade</option>
+                            <option value="11">11th Grade</option>
+                            <option value="12">12th Grade</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Why are you interested in Bright Future Academy?*</label>
+                        <textarea id="message" class="form-control" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" required> I agree to the <a href="#">terms and conditions</a>*
+                        </label>
+                    </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <button type="submit" class="btn" style="width: 200px;">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <section style="background: var(--dark); color: white; padding: 60px 0 20px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;" class="scroll-appear">
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Have Questions About Admissions?</h3>
+                <p style="max-width: 600px; margin: 0 auto 30px;">Our admissions team is happy to help guide you through
+                    the process.</p>
+                <a href="contact.html" class="btn">Contact Admissions</a>
+            </div>
+        </div>
+    </section>
+ 
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col">
+                    <h3>Bright Future Academy</h3>
+                    <p>123 Education Way<br>Learning City, ST 12345</p>
+                    <p>Phone: (123) 456-7890<br>Email: info@brightfuture.edu</p>
+                </div>
+    
+                <!-- Column 2 -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Academics</a></li>
+                        <li><a href="#">Student Life</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Parent Portal</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3 -->
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Cafeteria Menu</a></li>
+                        <li><a href="#">School Policies</a></li>
+                        <li><a href="#">Employment</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 4 -->
+                <div class="footer-col">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2023 Bright Future Academy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/admission.js' %}"></script>
+</body>
+
+</html>

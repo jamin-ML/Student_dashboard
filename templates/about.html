@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our School | Bright Future Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="{% static 'img/logo.png' %}" alt="School Logo">
+                <div class="logo-text">
+                    <h1>BRIGHT <span>FUTURE</span></h1>
+                    <p>Academy</p>
+                </div>
+            </div>
+    
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+    
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'academic' %}">Academics</a></li>
+                    <li><a href="{% url 'admission' %}">Admissions</a></li>
+                    <li><a href="{% url 'contact'%}">Contact</a></li>
+                    <li><a href="{% url 'dashboard'%}">Students Portal</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container hero-content scroll-appear">
+            <h1>About Bright Future Academy</h1>
+            <p>Discover our rich history, mission, and the dedicated team that makes our school exceptional.</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Our Mission & Values</h2>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-card scroll-appear delay-1">
+                    <div class="mission-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To empower students with knowledge, skills, and character to thrive in a changing world through
+                        innovative teaching and lifelong learning.</p>
+                </div>
+
+                <div class="mission-card scroll-appear delay-2">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be a leading educational institution recognized for academic excellence and the development of
+                        responsible global citizens.</p>
+                </div>
+
+                <div class="mission-card scroll-appear delay-3">
+                    <div class="mission-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>Integrity, Respect, Excellence, Innovation, and Community - the core principles that guide
+                        everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Our History</h2>
+            </div>
+
+            <div class="history-container">
+                <div class="history-image scroll-appear delay-1">
+                    <img src="{% static 'img/school_history.jpg' %}"
+                        alt="School History">
+                </div>
+
+                <div class="history-text scroll-appear delay-2">
+                    <h3>A Legacy of Educational Excellence</h3>
+                    <p>Founded in 1985, Bright Future Academy began as a small community school with just 50 students.
+                        Today, we serve over 1,200 students across our state-of-the-art campus, maintaining our
+                        commitment to personalized education.</p>
+
+                    <div class="timeline">
+                        <div class="timeline-item scroll-appear delay-1">
+                            <div class="timeline-year">1985</div>
+                            <p>School founded with 50 students in temporary facilities</p>
+                        </div>
+
+                        <div class="timeline-item scroll-appear delay-2">
+                            <div class="timeline-year">1992</div>
+                            <p>Moved to current campus location with expanded facilities</p>
+                        </div>
+
+                        <div class="timeline-item scroll-appear delay-3">
+                            <div class="timeline-year">2005</div>
+                            <p>Recognized as "School of Excellence" by state education board</p>
+                        </div>
+
+                        <div class="timeline-item scroll-appear delay-4">
+                            <div class="timeline-year">2018</div>
+                            <p>Completed major campus expansion with new STEM center</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>Our Leadership Team</h2>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card scroll-appear delay-1">
+                    <div class="team-image">
+                        <img src="{% static 'img/principal.png' %}"
+                            alt="Principal">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <p>Principal</p>
+                        <p>20+ years in education leadership</p>
+                    </div>
+                </div>
+
+                <div class="team-card scroll-appear delay-2">
+                    <div class="team-image">
+                        <img src="{% static 'img/vice_principal.jpg' %}"
+                            alt="Vice Principal">
+                    </div>
+                    <div class="team-info">
+                        <h3>Michael Okumu</h3>
+                        <p>Vice Principal</p>
+                        <p>Specializes in curriculum development</p>
+                    </div>
+                </div>
+
+                <div class="team-card scroll-appear delay-3">
+                    <div class="team-image">
+                        <img src="{% static 'img/academic_dean.jpg' %}"
+                            alt="Academic Dean">
+                    </div>
+                    <div class="team-info">
+                        <h3>Emily Rodriguez</h3>
+                        <p>Academic Dean</p>
+                        <p>Focus on student success programs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="section-title scroll-appear">
+                <h2>By The Numbers</h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item scroll-appear delay-1">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">College Acceptance</div>
+                </div>
+
+                <div class="stat-item scroll-appear delay-2">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">AP Courses Offered</div>
+                </div>
+
+                <div class="stat-item scroll-appear delay-3">
+                    <div class="stat-number">15:1</div>
+                    <div class="stat-label">Student-Teacher Ratio</div>
+                </div>
+
+                <div class="stat-item scroll-appear delay-4">
+                    <div class="stat-number">35</div>
+                    <div class="stat-label">Extracurricular Clubs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <section style="background: var(--dark); color: white; padding: 60px 0 20px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;" class="scroll-appear">
+                <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Ready to Join Our Community?</h3>
+                <a href="admissions.html"
+                    style="display: inline-block; background: var(--secondary); color: white; padding: 12px 30px; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">Apply
+                    Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col">
+                    <h3>Bright Future Academy</h3>
+                    <p>123 Education Way<br>Learning City, ST 12345</p>
+                    <p>Phone: (123) 456-7890<br>Email: info@brightfuture.edu</p>
+                </div>
+    
+                <!-- Column 2 -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Academics</a></li>
+                        <li><a href="#">Student Life</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Parent Portal</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 3 -->
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Cafeteria Menu</a></li>
+                        <li><a href="#">School Policies</a></li>
+                        <li><a href="#">Employment</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Column 4 -->
+                <div class="footer-col">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-bottom">
+                <p>&copy; 2023 Bright Future Academy. All Rights Reserved.</p>
+            </div>
+        </div>
+        </footer>
+
+    <script src="{% static 'js/about.js' %}"></script>
+</body>
+
+</html>

@@ -1,62 +1,287 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+  <title>Bright Future Academy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e8e7ee; font-size:17px; font-weight:500; width:100%;">
-  <div class="container">
-    <a href="#" class="navbar-brand">
-        <img src="#" alt="logo" style="width: 85px;">
-    
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'dashboard' %}">Student portal</a>
-        </li>
-        <li class="nav-item">
-            <a href="{% url 'register_student' %}" class="nav-link">register</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            More
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">About Us</a></li>
-            <li><a class="dropdown-item" href="#">Contact Us</a></li>
-            <li><a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a></li>
-            <li><a class="dropdown-item" href="#">Login</a></li>
-            <li><a class="dropdown-item" href="#">Sign Up</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Staff</a></li>
-            <li><a class="dropdown-item" href="#">Carieers</a></li>
-            <li><a class="dropdown-item" href="#">Partnership</a></li>
-          </ul>
-        </li>
 
-      </ul>
-      <form method="GET" class="d-flex" action="" role="search">
-        <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="{% static 'img/logo.png' %}" alt="School Logo">
+        <div class="logo-text">
+          <h1>BRIGHT <span>FUTURE</span></h1>
+          <p>Academy</p>
+        </div>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav id="mainNav">
+        <ul>
+          <li><a href="{% url 'home' %}" class="active">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'academic' %}">Academics</a></li>
+          <li><a href="{% url 'admission' %}">Admissions</a></li>
+          <li><a href="{% url 'contact'%}">Contact</a></li>
+          <li><a href="{% url 'dashboard'%}">Students Portal</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</nav>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script
+  </header>
+
+  <!-- Hero Slider -->
+  <section class="hero">
+    <div class="slideshow">
+      <!-- Slide 1 -->
+      <div class="slide active"
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/img/image1.jpg');">
+        <div class="container">
+          <div class="slide-content">
+            <h2>Quality Education for Tomorrow's Leaders</h2>
+            <p>Our mission is to provide exceptional learning experiences that prepare students for success in college
+              and beyond.</p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide"
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/img/image2.jpg');">
+        <div class="container">
+          <div class="slide-content">
+            <h2>Join Our Vibrant Community</h2>
+            <p>Discover a welcoming environment where students thrive academically, socially, and emotionally.</p>
+            <a href="#" class="btn">Admissions Info</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide"
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/img/image3.jpg');">
+        <div class="container">
+          <div class="slide-content">
+            <h2>Excellence in STEM Education</h2>
+            <p>Our state-of-the-art facilities and dedicated faculty provide unparalleled opportunities in science and
+              technology.</p>
+            <a href="#" class="btn">Our Programs</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide Navigation Dots -->
+      <div class="slide-nav">
+        <div class="slide-dot active" data-slide="0"></div>
+        <div class="slide-dot" data-slide="1"></div>
+        <div class="slide-dot" data-slide="2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about scroll-appear">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Our School</h2>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Welcome to Bright Future Academy</h3>
+          <p>Founded in 1995, Bright Future Academy has been a cornerstone of educational excellence in our community.
+            We pride ourselves on nurturing curious minds and fostering a lifelong love of learning.</p>
+          <p>Our student-centered approach combines rigorous academics with character development, ensuring our
+            graduates are prepared to meet the challenges of an ever-changing world.</p>
+          <p>With a 98% college acceptance rate and numerous academic awards, our track record speaks for itself.</p>
+          <a href="#" class="btn">Our History</a>
+        </div>
+
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="School Building">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="programs scroll-appear">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Programs</h2>
+      </div>
+
+      <div class="programs-grid">
+        <!-- Program 1 -->
+        <div class="program-card">
+          <img
+            src="{% static 'img/stem.jpg' %}"
+            alt="STEM Program">
+          <div class="program-info">
+            <h3>STEM Academy</h3>
+            <p>Our comprehensive Science, Technology, Engineering, and Math program prepares students for careers in
+              high-demand fields.</p>
+            <a href="#" class="btn">Explore</a>
+          </div>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="program-card">
+          <img
+            src="{% static 'img/art.jpg' %}"
+            alt="Arts Program">
+          <div class="program-info">
+            <h3>Visual & Performing Arts</h3>
+            <p>From theater to digital media, our arts programs foster creativity and self-expression.</p>
+            <a href="#" class="btn">Explore</a>
+          </div>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="program-card">
+          <img
+            src="{% static 'img/athletics.jpg' %}"
+            alt="Athletics Program">
+          <div class="program-info">
+            <h3>Athletics</h3>
+            <p>With 15 competitive sports teams, we promote teamwork, discipline, and healthy competition.</p>
+            <a href="#" class="btn">Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="news scroll-appear">
+    <div class="container">
+      <div class="section-title">
+        <h2>Latest News</h2>
+      </div>
+
+      <div class="news-grid">
+        <!-- News 1 -->
+        <div class="news-card">
+          <img
+            src="{% static 'img/scince.jpg' %}"
+            alt="News Image">
+          <div class="news-content">
+            <div class="news-date">June 15, 2023</div>
+            <h3>BFA Students Win State Science Fair</h3>
+            <p>Three of our students took top honors at the annual state science competition with their innovative
+              renewable energy project.</p>
+            <a href="#" class="btn">Read More</a>
+          </div>
+        </div>
+
+        <!-- News 2 -->
+        <div class="news-card">
+          <img
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="News Image">
+          <div class="news-content">
+            <div class="news-date">May 28, 2023</div>
+            <h3>New Campus Expansion Announced</h3>
+            <p>The school board has approved plans for a new STEM wing and performing arts center to be completed by
+              fall 2024.</p>
+            <a href="#" class="btn">Read More</a>
+          </div>
+        </div>
+
+        <!-- News 3 -->
+        <div class="news-card">
+          <img
+            src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+            alt="News Image">
+          <div class="news-content">
+            <div class="news-date">May 15, 2023</div>
+            <h3>Spring Musical Receives Rave Reviews</h3>
+            <p>Our student production of "The Addams Family" delighted audiences with four sold-out performances.</p>
+            <a href="#" class="btn">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <section style="background: var(--dark); color: white; padding: 60px 0 20px;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;" class="scroll-appear">
+        <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Ready to Join Our Community?</h3>
+        <a href="admissions.html"
+          style="display: inline-block; background: var(--secondary); color: white; padding: 12px 30px; border-radius: 5px; font-weight: 600; transition: all 0.3s ease;">Apply
+          Now</a>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <h3>Bright Future Academy</h3>
+          <p>123 Education Way<br>Learning City, ST 12345</p>
+          <p>Phone: (123) 456-7890<br>Email: info@brightfuture.edu</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Academics</a></li>
+            <li><a href="#">Student Life</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Parent Portal</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Cafeteria Menu</a></li>
+            <li><a href="#">School Policies</a></li>
+            <li><a href="#">Employment</a></li>
+            <li><a href="#">Volunteer</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2023 Bright Future Academy. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/home.js' %}"></script>
 </body>
+
 </html>
